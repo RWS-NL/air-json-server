@@ -37,16 +37,20 @@ jobs:
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 12
+    - name: Use Node.js 10
       uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 10
     - name: Restore CI Cache
       uses: actions/cache@v1
       with:
         path: node_modules
         key: ${{ runner.os }}-10-${{ hashFiles('**/yarn.lock') }}
-    - name: Install Deps
+    - name: Install Dependencies
       run: yarn
-    - name: Build Source
-      run: yarn build
+    - name: Run TSC
+      uses: icrawl/action-tsc@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        job-name: Typescript
