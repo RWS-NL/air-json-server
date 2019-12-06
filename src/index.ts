@@ -28,7 +28,6 @@ const userGenerator = (): User[] => new Array(15).fill(null).map(() => ({
 }));
 
 const companyGenerator = (): Company[] => new Array(15).fill(null).map(() => ({
-  id: faker.random.uuid(),
   companyName: faker.company.companyName(),
   catchPhrase: faker.company.catchPhrase(),
   primaryProduct: {
@@ -73,7 +72,6 @@ export interface User {
 }
 
 export interface Company {
-  id: string;
   companyName: string;
   catchPhrase: string;
   primaryProduct: {
