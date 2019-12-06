@@ -16,72 +16,8 @@
 
 ---
 
-## Recommended setup in `~/.zshrc` / `~/.bashrc`
+This repository is used as a placeholder json server that can be called through [https://my-json-server.typicode.com/RWS-NL/air-json-server](https://my-json-server.typicode.com/RWS-NL/air-json-server).
 
-This project uses its own ESLint configuration that adds on top of the ESLint configuration of create-react-app. To ensure that our own ESLint configuration is used when running the dev server and building you need to add the following to your shell configuration:
-```sh
-export EXTEND_ESLINT=true
-```
+It is primarily used in the API client tests for the frontend apps but can be used whenever a sample server for requests is required.
 
-## Decrypt credentials.yml and secrets.md
-We use `Transcrypt` for decrypting and encrypting sensitive information.
-```
-$ transcrypt -c aes-256-cbc -p 'secret_password'
-```
-
-## Install node_modules
-Before running, install the TypeScript modules
-```sh
-yarn
-``` 
-
-## Running Locally
-
-**First run air microservices and air-systeem backend!**
-
-Execute the yarn start script
-```sh
-yarn start
-```
-
-## Testing
-
-### Unit Testing
-```sh
-yarn test
-```
-
-### End-To-End Testing
-```sh
-yarn test:e2e
-```
-
-### Smoke Testing
-```sh
-yarn test:smoke
-```
-
-## Linting
-To lint the code
-```sh
-yarn lint
-```
-
-## Create a static build
-To build the code
-```sh
-yarn build
-```
-
-## AIR-Identity
-
-This application needs to be manually configured as a client in the SSO-Tile service called `air-identity` on each environment / space.
-
-The name should be: **air-frontend-apps**
-
-How to register a frontend application is documented in the [air-docs Wiki](https://github.com/RWS-NL/air-pipeline/blob/master/Pipeline.md).
-
-The resulting client-id must be stored in air-pipeline `credentials.yml`, example:
-```yaml
-manifest-vars-<space>: "--var auth-server=https://rws.login.system.cf-acc-am2.intranet.rws.nl --var client-id=<client-id-insert-here>"
-```
+This project is MIT licensed as it is based on [Typicode's demo repo](https://github.com/typicode/demo) has the same license.

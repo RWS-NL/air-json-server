@@ -2,6 +2,7 @@
   "name": "@rws-air/air-json-server",
   "author": "@rws-air",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "start": "json-server -p 3005 db.json",
