@@ -1,4 +1,4 @@
-import * as faker from 'faker';
+import faker from 'faker';
 import { writeJsonAtomic } from 'fs-nextra';
 import { join } from 'path';
 
@@ -10,7 +10,7 @@ const STATIC_DATA: Static = {
   },
 };
 
-const userGenerator = (): User[] => new Array(15).fill(null).map(() => ({
+const userGenerator = (): User[] => new Array(10).fill(null).map(() => ({
   id: faker.random.uuid(),
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
@@ -27,7 +27,8 @@ const userGenerator = (): User[] => new Array(15).fill(null).map(() => ({
   },
 }));
 
-const companyGenerator = (): Company[] => new Array(15).fill(null).map(() => ({
+const companyGenerator = (): Company[] => new Array(10).fill(null).map(() => ({
+  id: faker.random.uuid(),
   companyName: faker.company.companyName(),
   catchPhrase: faker.company.catchPhrase(),
   primaryProduct: {
@@ -39,12 +40,17 @@ const companyGenerator = (): Company[] => new Array(15).fill(null).map(() => ({
   },
 }));
 
-const JSONData = {
+const invalidDataGenerator = (): InvalidData[] => new Array(5).fill(null).map(() => ({
+  abbreviation: faker.hacker.abbreviation(),
+  phrase: faker.hacker.phrase(),
+}));
+
+export const JSONData: API = {
   ...STATIC_DATA,
   users: userGenerator(),
   companies: companyGenerator(),
+  invalidData: invalidDataGenerator(),
 };
-
 
 writeJsonAtomic(join(ROOT_DIR, 'db.json'), JSONData);
 
@@ -80,5 +86,19 @@ export interface Company {
     price: string;
     color: string;
     department: string;
+  };
+}
+
+export interface InvalidData {
+  abbreviation: string;
+  phrase: string;
+}
+
+export interface API {
+  users: User[];
+  companies: Company[];
+  invalidData: InvalidData[];
+  profile: {
+    name: string;
   };
 }
