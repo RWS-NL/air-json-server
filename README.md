@@ -1,7 +1,7 @@
 <div align="center">
     
 <p>
-<h1>Project AIR - Frontend</h1>
+<h1>Project AIR - JSON Placeholder Server</h1>
 
 <p>
  <a href="https://www.rijkswaterstaat.nl"><img src="https://img.shields.io/badge/RWS-Approved-yellow.svg?longCache=true&style=flat-square&logo=gov.uk&logoColor=white&link=https://www.rijkswaterstaat.nl&colorA=000000&colorB=154273" alt="RWS Approved" /></a><!--
