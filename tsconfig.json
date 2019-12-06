@@ -1,0 +1,9 @@
+{
+  "extends": "@favware/ts-config",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "moduleResolution": "Node"
+  }
+}

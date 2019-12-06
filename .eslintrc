@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "@favware"
+  ],
+  "parserOptions": {
+    "createDefaultProgram": true
+  },
+  "rules": {
+    "capitalized-comments": "off",
+    "no-console": "off",
+    "object-curly-newline": "off"
+  }
+}
