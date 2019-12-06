@@ -6,11 +6,13 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "lint": "eslint src --fix --ext ts",
-    "start": "json-server -p 3005 db.json",
-    "watch": "tsc -w",
+    "build": "tsc",
     "dev": "ts-node src/index.ts",
-    "up": "yarn upgrade-interactive --latest"
+    "lint": "eslint src --fix --ext ts",
+    "prepublishOnly": "tsc",
+    "start": "json-server -p 3005 db.json",
+    "up": "yarn upgrade-interactive --latest",
+    "watch": "tsc -w"
   },
   "dependencies": {},
   "devDependencies": {
