@@ -10,7 +10,7 @@ const STATIC_DATA = {
   },
 };
 
-const userGenerator = () => new Array(50).fill(null).map(() => ({
+const userGenerator = () => new Array(15).fill(null).map(() => ({
   id: faker.random.uuid(),
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
@@ -27,7 +27,7 @@ const userGenerator = () => new Array(50).fill(null).map(() => ({
   },
 }));
 
-const companyGenerator = () => new Array(50).fill(null).map(() => ({
+const companyGenerator = () => new Array(15).fill(null).map(() => ({
   id: faker.random.uuid(),
   companyName: faker.company.companyName(),
   catchPhrase: faker.company.catchPhrase(),
