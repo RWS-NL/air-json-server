@@ -3,7 +3,8 @@
   "author": "@rws-air",
   "version": "1.0.0",
   "license": "MIT",
-  "private": true,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "lint": "eslint src --fix --ext ts",
     "start": "json-server -p 3005 db.json",

@@ -3,14 +3,14 @@ import { writeJsonAtomic } from 'fs-nextra';
 import { join } from 'path';
 
 const ROOT_DIR = join(__dirname, '..');
-const STATIC_DATA = {
+const STATIC_DATA: Static = {
   profile:
   {
     name: '@rws-air/air-json-server',
   },
 };
 
-const userGenerator = () => new Array(15).fill(null).map(() => ({
+const userGenerator = (): User[] => new Array(15).fill(null).map(() => ({
   id: faker.random.uuid(),
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
@@ -27,7 +27,7 @@ const userGenerator = () => new Array(15).fill(null).map(() => ({
   },
 }));
 
-const companyGenerator = () => new Array(15).fill(null).map(() => ({
+const companyGenerator = (): Company[] => new Array(15).fill(null).map(() => ({
   id: faker.random.uuid(),
   companyName: faker.company.companyName(),
   catchPhrase: faker.company.catchPhrase(),
@@ -48,3 +48,39 @@ const JSONData = {
 
 
 writeJsonAtomic(join(ROOT_DIR, 'db.json'), JSONData);
+
+export interface Static {
+  profile: {
+    name: string;
+  };
+}
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  avatar: string;
+  job: string;
+  phone: string;
+  address: {
+    zipCode: string;
+    city: string;
+    streetName: string;
+    country: string;
+    latitude: string;
+    longitude: string;
+  };
+}
+
+export interface Company {
+  id: string;
+  companyName: string;
+  catchPhrase: string;
+  primaryProduct: {
+    name: string;
+    material: string;
+    price: string;
+    color: string;
+    department: string;
+  };
+}
